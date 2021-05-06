@@ -7,8 +7,8 @@ import SupervisorAccountIcon from "@material-ui/icons/SupervisorAccount";
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import ChatLevelIcon from '@material-ui/icons/Chat';
 import BusinessCenterIcon from "@material-ui/icons/BusinessCenter";
-import {useDispatch} from "react-redux";
-import {logout} from "./features/userSlice";
+import {useDispatch, useSelector} from "react-redux";
+import {logout, selectUser} from "./features/userSlice";
 import {auth} from "./firebase";
 
 const Header = () => {
@@ -34,7 +34,7 @@ const Header = () => {
                 <HeaderOption Icon={BusinessCenterIcon} title="Jobs"/>
                 <HeaderOption Icon={ChatLevelIcon} title="Messaging"/>
                 <HeaderOption
-                    avatar='https://lh3.googleusercontent.com/ogw/ADGmqu-AyN8g4PAEnI7RyRtB_6rR1FXx3O_xruIPznP3OQ=s83-c-mo'
+                    avatar={true}
                     alt='img'
                     title=''
                     onClick={logoutOfApp}
